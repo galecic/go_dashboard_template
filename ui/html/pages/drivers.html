@@ -1,0 +1,29 @@
+{{define "title"}}Drivers{{end}}
+
+{{define "main"}}
+    <h2>Drivers</h2>
+    {{if .Drivers}}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>License number</th>
+            <th>Phone number</th>
+            <th>Status</th>
+        </tr>
+        {{range .Drivers}}
+        <tr>
+            <td><a href='/vozaci/info/{{.ID}}'>{{.Name}}</a></td>
+            <td>{{.License_number}}</td>
+            <td>{{.Phone_number}}</td>
+            <td>{{.Status}}</td>
+            <td><a href='/vozaci/edit/{{.ID}}'>Edit</a></td>
+        </tr>
+        {{end}}
+    </table>
+    {{end}}
+    
+    <!-- Add a button to navigate to the add driver page -->
+    <div>
+        <a href="/vozaci/dodaj_vozaca" class="btn btn-primary">Add driver</a>
+    </div>
+{{end}}

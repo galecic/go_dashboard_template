@@ -1,0 +1,193 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: "Ubuntu Mono", monospace;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    background-color: #F5F5F5;
+    color: #4A4A4A;
+    overflow-y: scroll;
+}
+
+nav, main, footer {
+    padding: 2px calc((100% - 800px) / 2) 0;
+}
+
+main {
+    margin-top: 54px;
+    margin-bottom: 54px;
+    min-height: calc(100vh - 345px);
+    overflow: auto;
+}
+
+header {
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    background-image: linear-gradient(to right, #8B0000, #8B0000 25%, #666666 25%, #666666 100%);
+    border-bottom: 1px solid #E4E5E7;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    min-height: 120px; /* Adjusted for larger logo */
+}
+
+h1 a {
+    font-size: 28px;
+    font-weight: bold;
+    background-image: url("/static/img/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: 700px; /* Set width of logo */
+    height: 200px; /* Set height of logo */
+    padding-left: 0;
+    text-indent: -9999px; /* Hides text */
+}
+
+h1 a:hover {
+    text-decoration: none;
+    color: #B22222;
+}
+
+h2 {
+    font-size: 22px;
+    margin-bottom: 36px;
+    color: #A52A2A;
+    position: relative;
+    top: -9px;
+}
+
+a {
+    color: #B22222;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4A4A4A;
+    text-decoration: underline;
+}
+
+textarea, input:not([type="submit"]) {
+    font-size: 18px;
+    font-family: "Ubuntu Mono", monospace;
+}
+
+header {
+    background: linear-gradient(to right, #4A4A4A, #D83434);
+    background-size: 100% 6px;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #E4E5E7;
+    overflow: auto;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+header a {
+    color: #4A4A4A;
+    text-decoration: none;
+}
+
+nav {
+    border-bottom: 1px solid #E4E5E7;
+    padding-top: 17px;
+    padding-bottom: 15px;
+    background: #E8E8E8;
+    height: 60px;
+    color: #6A6C6F;
+}
+
+nav a {
+    margin-right: 1.5em;
+    display: inline-block;
+    color: #4A4A4A;
+}
+
+a.button, input[type="submit"] {
+    background-color: #B22222;
+    border-radius: 3px;
+    color: #FFFFFF;
+    padding: 12px 20px;
+    border: none;
+    display: inline-block;
+    margin-top: 18px;
+    font-weight: 700;
+}
+
+a.button:hover, input[type="submit"]:hover {
+    background-color: #8B0000;
+    color: #FFFFFF;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+form div {
+    margin-bottom: 18px;
+}
+
+form input[type="text"], form input[type="password"], form input[type="email"] {
+    padding: 0.75em 18px;
+    width: 100%;
+    color: #6A6C6F;
+    background: #FFFFFF;
+    border: 1px solid #E4E5E7;
+    border-radius: 3px;
+}
+
+form label {
+    display: inline-block;
+    margin-bottom: 9px;
+    color: #4A4A4A;
+}
+
+.error {
+    color: #B22222;
+    font-weight: bold;
+    display: block;
+}
+
+textarea {
+    padding: 18px;
+    width: 100%;
+    height: 266px;
+}
+
+button {
+    background: none;
+    padding: 0;
+    border: none;
+    color: #B22222;
+    text-decoration: none;
+}
+
+table {
+    background: white;
+    border: 1px solid #E4E5E7;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    text-align: left;
+    padding: 9px 18px;
+}
+
+footer {
+    border-top: 1px solid #E4E5E7;
+    padding-top: 17px;
+    padding-bottom: 15px;
+    background: #E8E8E8;
+    height: 60px;
+    color: #6A6C6F;
+    text-align: center;
+}

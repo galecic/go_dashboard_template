@@ -1,0 +1,42 @@
+{{define "title"}}ActiveJobs{{end}}
+
+{{define "main"}}
+    <h2>Jobs</h2>
+    <table>
+        <tr>
+            <th></th>
+            <th>Job ID</th>
+            <th>Status</th>
+            <th>Driver</th>
+            <th>Truck</th>
+            <th>Description</th>
+            <th>Departure date</th>
+            <th>Expected arrival date</th>
+            <th></th>
+
+        </tr>
+        {{if .JobDisplays}}
+            {{range .JobDisplays}} <!-- Loop over JobDisplays instead of Jobs -->
+            <tr>
+                {{if not (eq .Job.Status "completed")}}
+                    <td><a href='/poslovi/zavrsi/{{.Job.ID}}'>Complete</a></td>
+                {{else}}
+                    <td></td>
+                {{end}}
+                <td><a href='/poslovi/info/{{.Job.ID}}'>{{.Job.ID}}</a></td>
+                <td>{{.Job.Status}}</td>
+                <td><a href='/vozaci/info/{{.Job.Driver_id}}'>{{.DriverName}}</a></td> 
+                <td><a href='/kamioni/info/{{.Job.Truck_id}}'>{{.TruckLicensePlate}}</a></td> 
+                <td>{{.Job.Description}}</td>
+                <td>{{.FormattedDate}}</td>
+                <td>{{.FormattedArrival}}</td>
+                {{if not (eq .Job.Status "completed")}}
+                    <td><a href='/poslovi/edit/{{.Job.ID}}'>Edit</a></td> 
+                {{else}}
+                    <td></td>
+                {{end}}
+            </tr>
+            {{end}}
+        {{end}}
+    </table>
+{{end}}

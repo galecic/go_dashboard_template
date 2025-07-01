@@ -1,0 +1,50 @@
+{{define "title"}}Add new job{{end}}
+
+{{define "main"}}
+<form action='/poslovi/dodaj_posao' method='POST'>
+    <div>
+        <label>Description:</label>
+        {{with .Form.FieldErrors.description}}
+            <label class='error'>{{.}}</label>
+        {{end}}
+        <input type='text' name='description' value='{{.Form.Job.Description}}' required>
+    </div>
+
+    <div>
+        <label for="driver_id">Driver:</label>
+        <select name="driver_id" id="driver_id" required>
+            {{range $id, $name := .Form.DriverIdMap}}
+                <option value="{{$id}}">{{$name}}</option>
+            {{end}}
+        </select>
+    </div>
+    
+    <div>
+        <label for="truck_id">Truck:</label>
+        <select name="truck_id" id="truck_id" required>
+            {{range $id, $licensePlate := .Form.TruckIdMap}}
+                <option value="{{$id}}">{{$licensePlate}}</option>
+            {{end}}
+        </select>
+    </div>
+
+    <div>
+        <label>Departure date:</label>
+        <input type='datetime-local' name='start_date' required>
+    </div>
+
+    <div>
+        <label>Expected return date:</label>
+        <input type='datetime-local' name='end_date' required>
+    </div>
+
+    <div>
+        <label>Trucks starting km:</label>
+        <input type='number' name='starting_km' step='1' required>
+    </div>
+
+    <div>
+        <input type='submit' value='Add job' required>
+    </div>
+</form>
+{{end}}

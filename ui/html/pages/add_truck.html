@@ -1,0 +1,19 @@
+{{define "title"}}Add new truck{{end}}
+
+{{define "main"}}
+<form action='/kamioni/dodaj_kamion' method='POST'>
+    <div>
+        <label>Model name:</label>
+        <input type='text' name='model' required>
+    </div>
+
+    <div>
+        <label>License plate:</label>
+        <input type='text' name='license_plate' required>
+    </div>
+
+    <div>
+        <input type='submit' value='Add truck'>
+    </div>
+</form>
+{{end}}

@@ -1,0 +1,101 @@
+{{define "title"}}Info{{end}} 
+
+{{define "main"}} 
+
+<div class="data-container">
+    {{if .Jobs}}
+        <h2>Job details</h2>
+        <div class="job-container">
+            <!-- Loop through multiple jobs -->
+            {{range .Jobs}}
+                <div class="job">
+                    <div class="metadata">
+                        <strong>ID:</strong>
+                        <p>#{{.ID}}</p>
+                        
+                        <strong>Description:</strong>
+                        <p>{{.Description}}</p>
+
+                        <strong>Driver:</strong>
+                        <p>#{{.Driver_id}}</p>
+
+                        <strong>Truck:</strong>
+                        <p>{{.Truck_id}}</p>
+
+                        <strong>Departure date:</strong>
+                        <p>{{.StartDate}}</p>
+
+                        <strong>Arrival date:</strong>
+                        <p>{{.EndDate}}</p>
+
+                        <strong>Truck staring km:</strong>
+                        <p>{{.TruckStartKm}}</p>
+
+                        <strong>Truck ending km:</strong>
+                        <p>{{.TruckEndKm}}</p>
+
+                        <strong>Expenses:</strong>
+                        <p>{{.Expenses}}</p>
+
+                        <strong>Revenue:</strong>
+                        <p>{{.Revenue}}</p>
+
+                        <!-- <p><a href='/poslovi/edit/{{.ID}}'>Change</a></p> NEMA PROMENE POSLE COMPLETE-->
+                    </div>
+                </div>
+            {{end}}
+        </div>
+    {{else if .Drivers}}
+        <h2>Driver details</h2>
+        <div class="driver-container">
+            <!-- Loop through multiple drivers -->
+            {{range .Drivers}}
+                <div class="driver">
+                    <div class="metadata">
+                        <strong>Name:</strong>
+                        <p>{{.Name}}</p>
+
+                        <strong>Driver ID:</strong>
+                        <p>#{{.ID}}</p>
+
+                        <strong>License number:</strong>
+                        <p>{{.License_number}}</p>
+
+                        <strong>Phone number:</strong>
+                        <p>{{.Phone_number}}</p>
+
+                        <strong>Status:</strong>
+                        <p>{{.Status}}</p>
+                    </div>
+                </div>
+            {{end}}
+        </div>
+    {{else if .Trucks}}
+        <h2>Truck details</h2>
+        <div class="truck-container">
+            <!-- Loop through multiple trucks -->
+            {{range .Trucks}}
+                <div class="truck">
+                    <div class="metadata">
+                        <strong>Truck ID:</strong>
+                        <p>{{.ID}}</p>
+
+                        <strong>Model:</strong>
+                        <p>{{.Model}}</p>
+
+                        <strong>License plate:</strong>
+                        <p>{{.License_plate}}</p>
+
+                        <strong>Status:</strong>
+                        <p>{{.Status}}</p>
+
+                    </div>
+                </div>
+            {{end}}
+        </div>
+    {{else}}
+        <p>No data available.</p>
+    {{end}}
+</div>
+
+{{end}}
